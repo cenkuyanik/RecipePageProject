@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> M.C. Recipes</title>
+            <link rel="stylesheet" type="text/css" href="../css/style.css">
+        </head>
+        <body>
+            <header>
+                <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='HomePageRecipeBook.html'"> 
+                <form> 
+                    <input type="button" onclick="window.location.href = 'HomePageRecipeBook.html'" id="tabs" value="HOME PAGE" >
+                    <input type="button" onclick="window.location.href = 'recipes.html'" id="tabs" value="RECIPES" >
+                    <input type="button" onclick="window.location.href = 'history.html'" id="tabsSelected" value="HISTORY OF FOODS" >
+                    <input type="button" onclick="window.location.href = 'aboutUs.html'" id="tabs" value="ABOUT US" >
+                    <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+                    <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+                    <script>
+                      function openRecipePage() {
+                          window.location.href = 'recipes.html';
+                      }
+                    </script>
+                </form> 
+            </header> <br/> <br/> 
+            <table style="background-color: rgba(23, 24, 24, 0.568);">
+                <td >
+                    <th>
+                        <h3 style="color: rgb(163, 131, 42);"><b>A BRIEF HISTORY OF FOODS </b> </h3>
+                        <p style="color:aliceblue;">Humans may have started cooking their food for the first time between 1.2 million and 800,000 years ago, 
+                            according to scientists who have uncovered the oldest remains of raw food.
+                        </p>
+                        <p style="color:aliceblue; ">
+                            The most distinctive remains of fire on the European continent were found in the Cueva Negra Cave in Spain,
+                            dated 800,000 years ago, and in Gesher Benot Ya'aqov in Israel. When the two settlements are taken together,
+                            the history of cooking by lighting a fire is between 800 thousand and 1.2 million years.
+                        </p>
+                        <p style="color:aliceblue"> Source:
+                            <a href="https://www.turkascihaberleri.com/HaberDetay/77365/Yemek-Nedir,-Yemegin-Tarihi---.html#:~:text=s%C3%BCrecine%20kat%C4%B1lmaya%20ba%C5%9Flad%C4%B1lar.-,Yemek%20yemek%20ne%20zaman%20bulundu%3F,tarihte%20yiyeceklerini%20pi%C5%9Firmeye%20ba%C5%9Flam%C4%B1%C5%9F%20olabilir.">www.turkascihaberleri.com</a>
+                        </p>
+                    </th>
+                    <th>
+                        <img src="../Pictures_RecipePage/history_img.jpg" style="width:50vw; height:30vw;">
+                    </th>
+                </td>
+            </table> <br/><br/>
+        </body>
+        <footer>
+            <table> 
+                <th>
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto">
+                </th>
+                <th>
+                    <center>
+                        <small><small>
+                            <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+                            <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+                            <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+                            <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+                        </small></small>
+                    </center>
+                </th>
+                <th>
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto"> 
+                </th>
+            </table>        
+        </footer>
+    </html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> M.C. Recipes</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+
+    <body>
+            <header>
+                <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='../tab_pages/HomePageRecipeBook.html'"> 
+                <form> 
+                    <input type="button" onclick="window.location.href = '../tab_pages/HomePageRecipeBook.html'" id="tabs" value="HOME PAGE" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/recipes.html'" id="tabsSelected" value="RECIPES" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/history.html'" id="tabs" value="HISTORY OF FOODS" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/aboutUs.html'" id="tabs" value="ABOUT US" >
+                    <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+                    <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+                    <script>
+                      function openRecipePage() {
+                          window.location.href = '../tab_pages/recipes.html';
+                      }
+                    </script>
+                </form> 
+            </header> <br/> <br/> 
+  
+            <table style="background-color: rgba(23, 24, 24, 0.568);">
+                <td >
+                    <th>
+                        <h3 style="color: rgb(163, 131, 42);"><b>OMLETTE </b> </h3>
+                        <img src="../Pictures_RecipePage/food_pictures/omlet.jpg" width="500" height="300">
+                        <h4 style="color: rgb(163, 131, 42);">Cooking Time:  </h4>
+                        <p style="color:aliceblue"> 5 min.</p>
+                        <h4 style="color: rgb(163, 131, 42);">Ingredients:  </h4>
+                        <p style="color:aliceblue">
+                            2 eggs <br/>
+                            2 slices of white cheese<br/>
+                            3 sprigs of parsley<br/>
+                            1 teaspoon of milk<br/>
+                            2 teaspoons of flour<br/>
+                            2 tablespoons of oil<br/>
+                            1 teaspoon of salt (depending on the amount of salt in the cheese)<br/>
+                            Half a teaspoon of black pepper<br/>
+                            Half a teaspoon of red sweet pepper<br/>
+                            half a teaspoon of thyme<br/>
+                           <h4 style="color: rgb(163, 131, 42);">Recipe:  </h4>
+                        <p style="color:aliceblue;">In a suitable bowl, whisk the egg and milk thoroughly.
+                            Then add the shredded cheese and finely chopped parsley and continue whisking.
+                            Add the flour and whisk some more until you get a smooth consistency.
+                            Finally, add salt, black pepper, red sweet pepper and thyme and mix. Here you can adjust the salt according to the saltiness of your cheese. You can also add spices according to your taste.
+                            Then, let's take this mixture into the pan that we put oil and spread it all over with a brush, first one side and then turn it upside down and cook the other side thoroughly on low heat.
+                            A great taste for those who want to have breakfast without bread, it is very satisfying. Enjoy your meal.</p>
+                    </th>
+                </td>
+            </table>
+            <br/>
+            <center>
+                <button id="like-button6" class="like-button"></button>
+                <span id="like-count6">0</span> likes
+                <button id="dislike-button6" class="dislike-button"></button>
+                <span id="dislike-count6">0</span> dislikes
+            </center>
+            
+            <script>
+              const likeButton6 = document.getElementById('like-button6');
+              const likeCountElement6 = document.getElementById('like-count6');
+              let likeCount6 = JSON.parse(localStorage.getItem('likeCount6')) || 0;
+              likeCountElement6.innerText = likeCount6;
+              likeButton6.addEventListener('click', () => {
+                likeCount6++;
+                likeCountElement6.innerText = likeCount6;
+                localStorage.setItem('likeCount6', JSON.stringify(likeCount6));
+              })
+            
+              const dislikeButton6 = document.getElementById('dislike-button6');
+              const dislikeCountElement6 = document.getElementById('dislike-count6');
+              let dislikeCount6 = JSON.parse(localStorage.getItem('dislikeCount6')) || 0;
+              dislikeCountElement6.innerText = dislikeCount6;
+              dislikeButton6.addEventListener('click', () => {
+                dislikeCount6++;
+                dislikeCountElement6.innerText = dislikeCount6;
+                localStorage.setItem('dislikeCount6', JSON.stringify(dislikeCount6));
+              });
+            </script>
+                              <center>
+                                <section id="comment-section" class="commentSec">
+                                   <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Leave a Comment</p>
+                                  <form id="comment-form">
+                                      <label for="name">Name:</label>
+                                      <input type="text" id="name" required><br>
+                                      <label for="comment">Comment:</label>
+                                      <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                                      <button type="button" id="submit-button">Submit</button>
+                                  </form>
+                              </section>
+                          
+                              <section id="comments">
+                                  <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Comments:</p>
+                                  <ul id="comment-list" class="commentList"></ul>
+                              </section>
+                          </center>
+                              <script>
+                                  const nameInput = document.getElementById('name');
+                                  const commentInput = document.getElementById('comment');
+                                  const submitButton = document.getElementById('submit-button');
+                                  const commentList = document.getElementById('comment-list');
+                                  
+                                  submitButton.addEventListener('click', () => {
+                                      const name = nameInput.value;
+                                      const comment = commentInput.value;
+                                      
+                                      if (name && comment) {
+                                          const listItem = document.createElement('li');
+                                          listItem.textContent = `${name}: ${comment}`;
+                                          commentList.appendChild(listItem);
+                                          
+                                          nameInput.value = '';
+                                          commentInput.value = '';
+                                      }
+                                  });
+                              </script>
+    </body>
+    <footer>
+        <table> 
+             <th>
+               
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto" alt="logo">
+                
+            </th>
+            <th>
+  
+                <center>
+                    <small><small>
+                     <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+                     <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+                     <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+                     <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+                    </small></small>
+                </center>
+            </th>
+            <th>
+                
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo">
+                
+            </th>
+        </table>        
+    </footer>
+</html>

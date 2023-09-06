@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> M.C. Recipes</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+
+    <body>
+            <header>
+                <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='../tab_pages/HomePageRecipeBook.html'"> 
+                <form> 
+                    <input type="button" onclick="window.location.href = '../tab_pages/HomePageRecipeBook.html'" id="tabs" value="HOME PAGE" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/recipes.html'" id="tabsSelected" value="RECIPES" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/history.html'" id="tabs" value="HISTORY OF FOODS" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/aboutUs.html'" id="tabs" value="ABOUT US" >
+                    <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+                    <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+                    <script>
+                      function openRecipePage() {
+                          window.location.href = '../tab_pages/recipes.html';
+                      }
+                    </script>
+                </form> 
+            </header> <br/> <br/> 
+  
+            <table style="background-color: rgba(23, 24, 24, 0.568);">
+                <td >
+                    <th>
+                        <h3 style="color: rgb(163, 131, 42);"><b>LEEK MEAL </b> </h3>
+                        <img src="../Pictures_RecipePage/food_pictures/pirasa.jpg" width="500" height="300">
+                        <h4 style="color: rgb(163, 131, 42);">Cooking Time:  </h4>
+                        <p style="color:aliceblue"> 45 min.</p>
+                        <h4 style="color: rgb(163, 131, 42);">Ingredients:  </h4>
+                        <p style="color:aliceblue">
+                            2 stalks of leek<br/>
+                            1 small carrot<br/>
+                            1 tablespoon of rice<br/>
+                            1 teaspoon of sugar<br/>
+                            1 teaspoon of salt<br/>
+                            Olive oil<br/>
+                            juice of 1 lemon<br/>
+                           </p>
+                           <h4 style="color: rgb(163, 131, 42);">Recipe:  </h4>
+                        <p style="color:aliceblue;">To make a leek dish, the leeks are cleaned and chopped into 1 cm lengths.
+                            It is washed with plenty of water and the water is filtered.
+                            2 medium size carrots are peeled from the outside and sliced into thin circles.
+                            Oil is taken into the pot and tomato paste is added and fried.
+                            Add the grated tomatoes and turn it 1-2 turns.
+                            Then add the carrots and fry them together for 2-3 minutes.
+                            After adding the drained leeks, they are mixed and the lid of the pot is closed.
+                            On medium heat, the leeks are cooked in this way until they release their water and absorb their water.
+                            Finally, add the washed rice, adjust the salt and add enough hot water to line up with the food. If necessary, you can adjust the amount of water by adding it later.
+                            Cover the pot and cook on low heat until the carrots and leeks are cooked. After all the vegetables are soft, our dish is ready to be served. Enjoy your meal.
+                            Note: You can also cook leeks by using tomato sauce instead of tomatoes or by increasing the amount of tomato paste.
+                            
+                            Enjoy your meal.</p>
+                    </th>
+                </td>
+            </table>
+            <br/>
+            <center>
+                <button id="like-button4" class="like-button"></button>
+                <span id="like-count4">0</span> likes
+                <button id="dislike-button4" class="dislike-button"></button>
+                <span id="dislike-count4">0</span> dislikes
+            </center>
+            
+            <script>
+              const likeButton4 = document.getElementById('like-button4');
+              const likeCountElement4 = document.getElementById('like-count4');
+              let likeCount4 = JSON.parse(localStorage.getItem('likeCount4')) || 0;
+              likeCountElement4.innerText = likeCount4;
+              likeButton4.addEventListener('click', () => {
+                likeCount4++;
+                likeCountElement4.innerText = likeCount4;
+                localStorage.setItem('likeCount4', JSON.stringify(likeCount4));
+              })
+            
+              const dislikeButton4 = document.getElementById('dislike-button4');
+              const dislikeCountElement4 = document.getElementById('dislike-count4');
+              let dislikeCount4 = JSON.parse(localStorage.getItem('dislikeCount4')) || 0;
+              dislikeCountElement4.innerText = dislikeCount4;
+              dislikeButton4.addEventListener('click', () => {
+                dislikeCount4++;
+                dislikeCountElement4.innerText = dislikeCount4;
+                localStorage.setItem('dislikeCount4', JSON.stringify(dislikeCount4));
+              });
+            </script>
+<center>
+    <section id="comment-section" class="commentSec">
+       <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Leave a Comment</p>
+      <form id="comment-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required><br>
+          <label for="comment">Comment:</label>
+          <textarea id="comment" rows="4" cols="50" required></textarea><br>
+          <button type="button" id="submit-button">Submit</button>
+      </form>
+  </section>
+
+  <section id="comments">
+      <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Comments:</p>
+      <ul id="comment-list" class="commentList"></ul>
+  </section>
+</center>
+  <script>
+      const nameInput = document.getElementById('name');
+      const commentInput = document.getElementById('comment');
+      const submitButton = document.getElementById('submit-button');
+      const commentList = document.getElementById('comment-list');
+      
+      submitButton.addEventListener('click', () => {
+          const name = nameInput.value;
+          const comment = commentInput.value;
+          
+          if (name && comment) {
+              const listItem = document.createElement('li');
+              listItem.textContent = `${name}: ${comment}`;
+              commentList.appendChild(listItem);
+              
+              nameInput.value = '';
+              commentInput.value = '';
+          }
+      });
+  </script>
+    </body>
+    <footer>
+        <table> 
+             <th>
+               
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto" alt="logo">
+                
+            </th>
+            <th>
+  
+                <center>
+                    <small><small>
+                     <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+                     <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+                     <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+                     <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+                    </small></small>
+                </center>
+            </th>
+            <th>
+                
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo">
+                
+            </th>
+        </table>        
+    </footer>
+</html>

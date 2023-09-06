@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> M.C. Recipes</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+
+    <body>
+            <header>
+                <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='../tab_pages/HomePageRecipeBook.html'"> 
+                <form> 
+                    <input type="button" onclick="window.location.href = '../tab_pages/HomePageRecipeBook.html'" id="tabs" value="HOME PAGE" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/recipes.html'" id="tabsSelected" value="RECIPES" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/history.html'" id="tabs" value="HISTORY OF FOODS" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/aboutUs.html'" id="tabs" value="ABOUT US" >
+                    <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+                    <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+                    <script>
+                      function openRecipePage() {
+                          window.location.href = '../tab_pages/recipes.html';
+                      }
+                    </script>
+                </form> 
+            </header> <br/> <br/> 
+  
+            <table style="background-color: rgba(23, 24, 24, 0.568);">
+                <td >
+                    <th>
+                        <h3 style="color: rgb(163, 131, 42);"><b>RICE </b> </h3>
+                        <img src="../Pictures_RecipePage/food_pictures/pilav.jpg" width="500" height="300">
+                        <h4 style="color: rgb(163, 131, 42);">Cooking Time:  </h4>
+                        <p style="color:aliceblue"> 15 min.</p>
+                        <h4 style="color: rgb(163, 131, 42);">Ingredients:  </h4>
+                        <p style="color:aliceblue">
+                            2 cups of rice<br/>
+                            2.5 cups of hot water<br/>
+                            3 tablespoons of butter<br/>
+                            1 tablespoon of oil<br/>
+                            Salt<br/>
+                            Warm water to cover the rice<br/>
+                            Salt<br/>
+                           <h4 style="color: rgb(163, 131, 42);">Recipe:  </h4>
+                        <p style="color:aliceblue;">Wash the rice with plenty of water. Take it in a suitable container and add enough warm water to cover it. Add some salt, mix and leave for 15-20 minutes. Then rinse and drain the water. We wash it until the starch is gone. The water coming out should be clear.
+                            Melt the butter in the pan, add the drained rice and fry for 4-5 minutes. You can understand that the rice is sufficiently roasted when the rice starts to fall off one by one.
+                            After the rice is roasted, add hot water or hot broth. If you want, you can use half chicken broth and half hot water. If your chicken broth is oily, I recommend mixing it with water in this way, but if it is not oily, it will be much tastier with whole chicken broth.
+                            Finally, add the salt.
+                            Let's let our rice cook on high heat first with the lid closed.
+                            Let's take it to a low fire when there are eyeballs on it, that is, when the water is drawn on it and there are dotted holes on the rice. Let the rice cook until it is soft and the water is completely absorbed.
+                            After taking our cooked rice from the stove, let's put a towel on it and close the lid again.
+                            Rice 10-15 min. let's rest. Then you can mix it with a wooden spoon and serve.</p>
+                    </th>
+                </td>
+            </table>
+            <br/>
+            <center>
+                <button id="like-button7" class="like-button"></button>
+                <span id="like-count7">0</span> likes
+                <button id="dislike-button7" class="dislike-button"></button>
+                <span id="dislike-count7">0</span> dislikes
+            </center>
+            
+            <script>
+              const likeButton7 = document.getElementById('like-button7');
+              const likeCountElement7 = document.getElementById('like-count7');
+              let likeCount7 = JSON.parse(localStorage.getItem('likeCount7')) || 0;
+              likeCountElement7.innerText = likeCount7;
+              likeButton7.addEventListener('click', () => {
+                likeCount7++;
+                likeCountElement7.innerText = likeCount7;
+                localStorage.setItem('likeCount7', JSON.stringify(likeCount7));
+              })
+            
+              const dislikeButton7 = document.getElementById('dislike-button7');
+              const dislikeCountElement7 = document.getElementById('dislike-count7');
+              let dislikeCount7 = JSON.parse(localStorage.getItem('dislikeCount7')) || 0;
+              dislikeCountElement7.innerText = dislikeCount7;
+              dislikeButton7.addEventListener('click', () => {
+                dislikeCount7++;
+                dislikeCountElement7.innerText = dislikeCount7;
+                localStorage.setItem('dislikeCount7', JSON.stringify(dislikeCount7));
+              });
+            </script>
+                              <center>
+                                <section id="comment-section" class="commentSec">
+                                   <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Leave a Comment</p>
+                                  <form id="comment-form">
+                                      <label for="name">Name:</label>
+                                      <input type="text" id="name" required><br>
+                                      <label for="comment">Comment:</label>
+                                      <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                                      <button type="button" id="submit-button">Submit</button>
+                                  </form>
+                              </section>
+                          
+                              <section id="comments">
+                                  <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Comments:</p>
+                                  <ul id="comment-list" class="commentList"></ul>
+                              </section>
+                          </center>
+                              <script>
+                                  const nameInput = document.getElementById('name');
+                                  const commentInput = document.getElementById('comment');
+                                  const submitButton = document.getElementById('submit-button');
+                                  const commentList = document.getElementById('comment-list');
+                                  
+                                  submitButton.addEventListener('click', () => {
+                                      const name = nameInput.value;
+                                      const comment = commentInput.value;
+                                      
+                                      if (name && comment) {
+                                          const listItem = document.createElement('li');
+                                          listItem.textContent = `${name}: ${comment}`;
+                                          commentList.appendChild(listItem);
+                                          
+                                          nameInput.value = '';
+                                          commentInput.value = '';
+                                      }
+                                  });
+                              </script>
+    </body>
+    <footer>
+        <table> 
+             <th>
+               
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto" alt="logo">
+                
+            </th>
+            <th>
+  
+                <center>
+                    <small><small>
+                     <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+                     <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+                     <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+                     <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+                    </small></small>
+                </center>
+            </th>
+            <th>
+                
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo">
+                
+            </th>
+        </table>        
+    </footer>
+</html>

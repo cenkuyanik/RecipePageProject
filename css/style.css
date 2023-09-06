@@ -1,0 +1,279 @@
+header
+  {
+    background-image: url("../Pictures_RecipePage/headerback.jpg");
+    background-blend-mode:soft-light;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size:cover;
+    top:0vw;
+    display: flex;
+    margin-top: 0vw;
+    padding-top: 0vw;
+    border:double;
+    text-align: center;
+   
+  }
+
+  .logo{
+    display: flex;
+}
+#logo:hover{
+  cursor: pointer;
+}
+h1
+  {
+    display:flex;
+    color:rgb(8, 61, 44);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    font-size:1vw;
+  }
+h2
+  {
+    font-style: italic;
+    text-align: left;
+    color:rgb(255, 255, 255);
+    /*color:rgb(167, 165, 165);*/
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size:1.2vw;
+  }
+  h3
+  {
+    font-style: italic;
+    text-align: center;
+    color:rgb(255, 255, 255);
+    /*color:rgb(167, 165, 165);*/
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size:1.2vw;
+  }
+body
+  {
+    background-image: url("../Pictures_RecipePage/background.jpg");
+    font-family: Arial, Helvetica, sans-serif;   
+  }
+#tabs
+  { 
+    color:black;
+    background-color:rgba(185, 144, 9, 0.623);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1.5vw;  
+    margin-top:7.5vw;
+    border-style: solid;
+  }
+#tabs:hover
+  {
+    background-color:rgb(8, 85, 66);
+    color:rgb(250, 248, 247);
+    cursor: pointer;
+  }
+#tabsSelected
+  {
+    border-style: solid;
+    color:rgb(248, 246, 246);
+    background-color:rgba(1, 82, 61, 0.938);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1.5vw;  
+  }
+footer
+  {
+    background-color: rgba(128, 128, 128, 0.301);
+    font-size:1.5vw;  
+  }
+  table{
+    font-size:1.5vw;  
+  }
+  /*--Cards Properties*/
+  .card {
+    text-align: center;
+    border: 9px rgba(0, 0, 0, 0.616);
+    border-style: groove;
+   
+    width: 20vw;
+    height: 22vw;
+  }
+  .cardFooter{
+    background-image: url("../Pictures_RecipePage/headerback.jpg");
+    background-blend-mode:soft-light;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 9px rgba(0, 0, 0, 0.616) groove ;
+    border-top: none;
+    width: 20vw;
+    height: 2.5vw;
+  }
+  .card:hover {
+    background-color:rgb(17, 88, 65);
+    cursor:pointer;
+  }
+  .food_img {
+    margin-top: 10px;
+    width: 18vw;
+    height: 14vw;
+  }
+  .food_name {
+    font-size:1.5vw;  
+    color:black;
+    background-color:rgb(163, 131, 42);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  #cooking_time
+  {
+    color:rgba(243, 239, 239, 0.986);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1vw;     
+  }
+.column {
+  float: left;
+  padding: 0.5vw 0.5vw;
+}
+.row {margin: 0 -5px;}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  #btn
+  {
+
+    font-size: 15px;
+    border: none; 
+    color:black;
+    background-color:rgb(163, 131, 42);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+  #functional_btn
+  {
+    font-size: 1.5vw;
+    border: none; 
+    color:black;
+    background-color:rgb(163, 131, 42);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .last_card 
+  {
+    text-align: center;
+    border: 9px rgba(0, 0, 0, 0.233) dashed;
+    width: 20vw;
+    height: 22vw;
+  }
+  .last_card:hover 
+  {
+    background-color: rgba(21, 241, 205, 0.507);
+    cursor:pointer;
+  }
+  #searchBar{
+    width:50vw;
+    height: 2.2vw;
+    
+
+  }
+  .searchBtn {
+    background-image: url('../Pictures_RecipePage/search.png'); 
+    background-position: center;
+    background-color:rgba(185, 144, 9, 0.623);
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    width: 3vw; 
+    height: 2.5vw; 
+    cursor: pointer; 
+    border: 2px solid #000000; 
+    border-radius: 220px; 
+}
+.searchBtn:hover {
+  background-image: url('../Pictures_RecipePage/search2.png'); 
+  background-color:rgb(8, 85, 66);
+  cursor:pointer;
+}
+.mainSearchBtn {
+  background-image: url('../Pictures_RecipePage/search.png'); 
+  background-position:left;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  color:black;
+  background-color: transparent;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:1.5vw;  
+  margin-top:7.5vw;
+  border-style: none;
+  padding-left: 2vw;
+  padding-top: 0.2vw;
+  margin-left: 1vw;
+}
+.mainSearchBtn:hover {
+background-image: url('../Pictures_RecipePage/search2.png'); 
+color:rgb(250, 248, 247);
+cursor:pointer;
+text-decoration: underline;
+}
+.loginBtn {
+  background-image: url('../Pictures_RecipePage/login.png'); 
+  background-position:left;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  color:black;
+  background-color: transparent;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:1.5vw;  
+  margin-top:7.5vw;
+  border-style: none;
+  padding-left: 2.3vw;
+  padding-top: 0.2vw;
+  margin-left: 1vw;
+}
+.loginBtn:hover {
+background-image: url('../Pictures_RecipePage/login2.png'); 
+color:rgb(250, 248, 247);
+cursor:pointer;
+text-decoration: underline;
+}
+
+.like-button {
+  background-image: url('../Pictures_RecipePage/like.png'); 
+  background-position: center;
+  background-color:rgba(185, 144, 9, 0.623);
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  width: 3vw; 
+  height: 2.5vw; 
+  cursor: pointer; 
+  border: 2px solid #000000; 
+  border-radius: 220px; 
+}
+
+.like-button:hover {
+background-image: url('../Pictures_RecipePage/liked.png'); 
+background-color:rgb(8, 85, 66);
+cursor:pointer;
+}
+
+.dislike-button {
+  background-image: url('../Pictures_RecipePage/dislike.png'); 
+  background-position: center;
+  background-color:rgba(185, 144, 9, 0.623);
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  width: 3vw; 
+  height: 2.5vw; 
+  cursor: pointer; 
+  border: 2px solid #000000; 
+  border-radius: 220px; 
+}
+
+.dislike-button:hover {
+background-image: url('../Pictures_RecipePage/disliked.png'); 
+background-color:rgb(8, 85, 66);
+cursor:pointer;
+}
+
+.commentList{
+  list-style: none;
+  text-align: center;
+  border-style: solid;
+  border-style: groove;
+}

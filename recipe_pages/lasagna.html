@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> M.C. Recipes</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+
+    <body>
+            <header>
+                <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='../tab_pages/HomePageRecipeBook.html'"> 
+                <form> 
+                    <input type="button" onclick="window.location.href = '../tab_pages/HomePageRecipeBook.html'" id="tabs" value="HOME PAGE" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/recipes.html'" id="tabsSelected" value="RECIPES" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/history.html'" id="tabs" value="HISTORY OF FOODS" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/aboutUs.html'" id="tabs" value="ABOUT US" >
+                    <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+                    <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+                    <script>
+                      function openRecipePage() {
+                          window.location.href = '../tab_pages/recipes.html';
+                      }
+                    </script>
+                </form> 
+            </header> <br/> <br/> 
+  
+            <table style="background-color: rgba(23, 24, 24, 0.568);">
+                <td >
+                    <th>
+                        <h3 style="color: rgb(163, 131, 42);"><b>LASAGNA </b> </h3>
+                        <img src="../Pictures_RecipePage/food_pictures/lazanya.jpg" width="500" height="300">
+                        <h4 style="color: rgb(163, 131, 42);">Cooking Time:  </h4>
+                        <p style="color:aliceblue"> 45 min.</p>
+                        <h4 style="color: rgb(163, 131, 42);">Ingredients:  </h4>
+                        <p style="color:aliceblue">
+                            12 sheets of lasagna<br/>
+                            400 g minced meat<br/>
+                            3 tablespoons of oil<br/>
+                            2 onions<br/>
+                            2 tomatoes<br/>
+                            2 tablespoons of tomato paste<br/>
+                            2 cloves of garlic<br/>
+                            1 teaspoon salt<br/>
+                            1.5 cups of hot water (300 ml)<br/>
+                            2 spoonful butter<br/>
+                            3 glasses of milk (600 ml)<br/>
+                            Half a glass of flour<br/>
+                            1 teaspoon of salt<br/>
+                            Half a teaspoon of black pepper<br/>
+                            1 cup grated cheddar cheese<br/>
+                           </p>
+                           <h4 style="color: rgb(163, 131, 42);">Recipe:  </h4>
+                        <p style="color:aliceblue;">For the stuffing, take oil in a large pan. Let's add the onions that we cut into small pieces, after frying a little, add ground beef and continue to fry.
+                            When the minced meat is sufficiently roasted, let's add the chopped garlic and the peeled and chopped tomatoes and sauté for 5 more minutes on medium heat.
+                            Let's add the garlic and salt to it and fry it.
+                            Then, add the water and let it cook on low heat until our stuffing absorbs its water.
+                              For the bechamel sauce, put the butter and flour in a small saucepan and fry over medium heat.
+                            Let's add the milk little by little and whisk it constantly so that it doesn't get lumpy.
+                            When it starts to boil, add salt and pepper. When it reaches the consistency of custard, take it from the stove.
+                            After the minced meat sauce and béchamel sauce are prepared, let's first spread some of the stuffing in a heat-resistant baking dish.
+                            After drizzling a little béchamel sauce on it, I lined the lasagna.
+                            Let's spread it nicely by pouring a little stuffing with minced meat and then bechamel sauce on the lasagna.
+                            Let's put the lasagna sheets on it again and again let's drizzle with the inner export and béchamel sauce. Let's continue this process until you run out of materials.
+                            Let's pour the stuffing and bechamel sauce again on the top lasagna and sprinkle with grated cheddar cheese.
+                            Let's cook our lasagna in a preheated 190 degree oven for about 20-25 minutes.
+                            When it is completely browned, take it out of the oven and let it rest for 15 minutes.
+                            Then let's serve our lasagna by slicing. Enjoy your meal.
+                            Note: I recommend reading the package before making, because some lasagna may need to be boiled, if it needs to be boiled it will be indicated there</p>
+                    </th>
+                </td>
+            </table> <br/>
+            <center>
+                <button id="like-button2" class="like-button"></button>
+                <span id="like-count2">0</span> likes
+                <button id="dislike-button2" class="dislike-button"></button>
+                <span id="dislike-count2">0</span> dislikes
+            </center>
+            
+            <script>
+              const likeButton2 = document.getElementById('like-button2');
+              const likeCountElement2 = document.getElementById('like-count2');
+              let likeCount2 = JSON.parse(localStorage.getItem('likeCount2')) || 0;
+              likeCountElement2.innerText = likeCount2;
+              likeButton2.addEventListener('click', () => {
+                likeCount2++;
+                likeCountElement2.innerText = likeCount2;
+                localStorage.setItem('likeCount2', JSON.stringify(likeCount2));
+              })
+              const dislikeButton2 = document.getElementById('dislike-button2');
+              const dislikeCountElement2 = document.getElementById('dislike-count2');
+              let dislikeCount2 = JSON.parse(localStorage.getItem('dislikeCount2')) || 0;
+              dislikeCountElement2.innerText = dislikeCount2;
+              dislikeButton2.addEventListener('click', () => {
+                dislikeCount2++;
+                dislikeCountElement2.innerText = dislikeCount2;
+                localStorage.setItem('dislikeCount2', JSON.stringify(dislikeCount2));}
+                );
+            </script>
+                                            <center>
+                                                <section id="comment-section" class="commentSec">
+                                                   <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Leave a Comment</p>
+                                                  <form id="comment-form">
+                                                      <label for="name">Name:</label>
+                                                      <input type="text" id="name" required><br>
+                                                      <label for="comment">Comment:</label>
+                                                      <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                                                      <button type="button" id="submit-button">Submit</button>
+                                                  </form>
+                                              </section>
+                                          
+                                              <section id="comments">
+                                                  <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Comments:</p>
+                                                  <ul id="comment-list" class="commentList"></ul>
+                                              </section>
+                                          </center>
+                                              <script>
+                                                  const nameInput = document.getElementById('name');
+                                                  const commentInput = document.getElementById('comment');
+                                                  const submitButton = document.getElementById('submit-button');
+                                                  const commentList = document.getElementById('comment-list');
+                                                  
+                                                  submitButton.addEventListener('click', () => {
+                                                      const name = nameInput.value;
+                                                      const comment = commentInput.value;
+                                                      
+                                                      if (name && comment) {
+                                                          const listItem = document.createElement('li');
+                                                          listItem.textContent = `${name}: ${comment}`;
+                                                          commentList.appendChild(listItem);
+                                                          
+                                                          nameInput.value = '';
+                                                          commentInput.value = '';
+                                                      }
+                                                  });
+                                              </script>
+    </body>
+    <footer>
+        <table> 
+             <th>
+               
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto" alt="logo">
+                
+            </th>
+            <th>
+  
+                <center>
+                    <small><small>
+                     <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+                     <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+                     <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+                     <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+                    </small></small>
+                </center>
+            </th>
+            <th>
+                
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo">
+                
+            </th>
+        </table>        
+    </footer>
+</html>

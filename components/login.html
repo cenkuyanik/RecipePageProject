@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_register_style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+    </div>
+    <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        var enteredUsername = document.getElementById("username").value;
+        var enteredPassword = document.getElementById("password").value;
+        var storedUserDataJSON = localStorage.getItem("user");
+
+        if (storedUserDataJSON) {
+            var storedUserData = JSON.parse(storedUserDataJSON);
+
+            if (enteredUsername === storedUserData.username && enteredPassword === storedUserData.password) {
+                window.location.href = '../tab_pages/HomePageRecipeBook.html';
+            } else {
+                alert("Invalid username or password");
+            }
+        } else {
+            alert("No user data found. Please register first.");
+        }
+    });
+    </script>
+</body>
+</html>

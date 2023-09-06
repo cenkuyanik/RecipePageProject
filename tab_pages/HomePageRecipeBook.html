@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title> M.C. Recipes</title>
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+
+    <body>
+      <header>
+        <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='HomePageRecipeBook.html'"> 
+        <form>
+          <input type="button" id="tabsSelected" value="HOME PAGE" >
+          <input type="button" onclick="window.location.href = 'recipes.html'" id="tabs" value="RECIPES" >
+          <input type="button" onclick="window.location.href = 'history.html'" id="tabs" value="HISTORY OF FOODS" >
+          <input type="button" onclick="window.location.href = 'aboutUs.html'" id="tabs" value="ABOUT US" >
+          <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+          <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+          <script>
+            function openRecipePage() {
+                window.location.href = 'recipes.html';
+            }
+            function handleLoginLogout() {
+            var isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (isLoggedIn === "true") {
+                localStorage.setItem("isLoggedIn", "false");
+                document.getElementById("loginBtn").value = "LOGOUT";
+                window.location.reload(); 
+            } else {
+                window.location.href = '../components/login.html';
+            }
+        }
+        window.onload = function() {
+            var isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (isLoggedIn === "true") {
+                document.getElementById("loginBtn").value = "Logout";
+            } else {
+                document.getElementById("loginBtn").value = "Login";
+            }
+        };
+          </script>
+        </form>
+      </header> 
+      <h1 style="color:aliceblue"> Welcome to the M.C. Recipe Web Page! You can observe many food and their recipes in this page. Here are some popular recipes: </h1>
+      <table > 
+        <td> 
+          <th>
+            <div class="card"onclick="window.location.href = '../recipe_pages/green_pea_meal.html'" >
+              <img class="food_img" src="../Pictures_RecipePage/food_pictures/bezelye.jpg">
+              <p class="food_name">GREEN PEA MEAL</p>
+              <p id="cooking_time">Cooking Time: 50 Min. </p>
+            </div>
+          </th>
+          <th>
+            <div class="card"onclick="window.location.href = '../recipe_pages/sushi.html'">
+              <img class="food_img" src="../Pictures_RecipePage/food_pictures/sushi.jpg">
+              <p class="food_name">SUSHI</p>
+              <p id="cooking_time">Cooking Time: 30 Min. </p>
+            </div>
+          </th>
+          <th>
+            <div class="card"onclick="window.location.href = '../recipe_pages/leek_meal.html'">
+              <img class="food_img" src="../Pictures_RecipePage/food_pictures/pirasa.jpg">
+                <p class="food_name">LEEK MEAL</p>
+                <p id="cooking_time">Cooking Time: 45 Min. </p>
+            </div>
+          </th>
+          <th>
+            <div class="card"onclick="window.location.href = '../recipe_pages/menemen.html'">
+              <img class="food_img" src="../Pictures_RecipePage/food_pictures/menemen.jpg">
+              <p class="food_name">MENEMEN</p>
+              <p id="cooking_time">Cooking Time: 25 Min. </p>
+            </div>
+          </th>
+        </td>
+      </table>
+      <table> 
+        <td> 
+          <th>
+            <div class="card"onclick="window.location.href = '../recipe_pages/leaf_wrapping.html'">
+              <img class="food_img" src="../Pictures_RecipePage/food_pictures/yaprak.jpg">
+              <p class="food_name">LEAF WRAPPING</p>
+              <p id="cooking_time">Cooking Time: 100 Min. </p>
+            </div>
+          </th>
+          <th>
+            <div class="card"onclick="window.location.href = '../recipe_pages/taco.html'">
+              <img class="food_img" src="../Pictures_RecipePage/food_pictures/taco.jpg">
+              <p class="food_name">TACO</p>
+              <p id="cooking_time">Cooking Time: 45 Min. </p>
+            </div>
+          </th>
+          <th>
+            <div class="card" onclick="window.location.href = '../recipe_pages/omlette.html'">
+              <img class="food_img" src="../Pictures_RecipePage/food_pictures/omlet.jpg">
+              <p class="food_name">OMLETTE</p>
+              <p id="cooking_time">Cooking Time: 5 Min. </p>
+            </div>
+          </th>
+          <th>
+            <div class="last_card"onclick="window.location.href = 'recipes.html'"><br/>
+              <img class="food_img" src="../Pictures_RecipePage/logo.png"><br/><br/><br/>
+              <button id="functional_btn"style="font-size:1.5vw;"><a href="recipes.html">CHECK OTHER RECIPES</a></button>
+            </div>
+          </th>
+        </td>
+      </table>
+    </body> <br/>
+    <footer>
+      <table> 
+        <th>
+          <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto" alt="logo">
+        </th>
+        <th>
+          <center>
+            <small><small>
+             <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+             <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+             <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+             <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+            </small></small>
+          </center>
+        </th>
+        <th>
+          <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo">
+        </th>
+      </table>        
+    </footer>
+  </html>

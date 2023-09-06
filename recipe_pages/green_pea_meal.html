@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> M.C. Recipes</title>
+            <link rel="stylesheet" type="text/css" href="../css/style.css">
+        </head>
+        <body>
+            <header>
+                <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='../tab_pages/HomePageRecipeBook.html'"> 
+                <form> 
+                    <input type="button" onclick="window.location.href = '../tab_pages/HomePageRecipeBook.html'" id="tabs" value="HOME PAGE" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/recipes.html'" id="tabsSelected" value="RECIPES" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/history.html'" id="tabs" value="HISTORY OF FOODS" >
+                    <input type="button" onclick="window.location.href = '../tab_pages/aboutUs.html'" id="tabs" value="ABOUT US" >
+                    <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+                    <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+                    <script>
+                      function openRecipePage() {
+                          window.location.href = '../tab_pages/recipes.html';
+                      }
+                    </script>
+                </form> 
+            </header> <br/> <br/> 
+                <table style="background-color: rgba(23, 24, 24, 0.568);">
+                    <td >
+                        <th>
+                            <h3 style="color: rgb(163, 131, 42);"><b>GREEN PEA MEAL </b> </h3>
+                            <img src="../Pictures_RecipePage/food_pictures/bezelye.jpg" width="500" height="300">
+                            <h4 style="color: rgb(163, 131, 42);">Cooking Time:  </h4>
+                            <p style="color:aliceblue"> 50 min.</p>
+                            <h4 style="color: rgb(163, 131, 42);">Ingredients:  </h4>
+                            <p style="color:aliceblue">
+                                500 g fresh peas<br/>
+                                1 onion<br/>
+                                1 potato<br/>
+                                1 carrot<br/>
+                                1 tablespoon of tomato paste<br/>
+                                1 teaspoon of salt<br/>
+                                1 teaspoon of black pepper<br/>
+                                4 tablespoons of olive oil<br/>
+                                1 clove of garlic<br/>
+                                150 g minced meat<br/>
+                           </p>
+                           <h4 style="color: rgb(163, 131, 42);">Recipe:  </h4>
+                            <p style="color:aliceblue;">Peas are separated. The onion is chopped for cooking and put in a pot with olive oil.
+                                When the onion starts to fry a little, garlic and minced meat are added. The minced meat is well roasted.
+                                Potatoes and carrots are washed and diced.
+                                Tomato paste is added to the roasted onion and roasted until its smell comes out.
+                                Add peas, potatoes and carrots. All ingredients are roasted together.
+                                After the spices are added, water is added until it reaches the top of the ingredients and left to cook on low heat. Enjoy your meal.
+                            </p>
+                        </th>
+                    </td>
+                </table>
+                <br/>
+                <center>
+                    <button id="like-button1" class="like-button"></button>
+                    <span id="like-count1">0</span> likes
+                    <button id="dislike-button1" class="dislike-button"></button>
+                    <span id="dislike-count1">0</span> dislikes
+                </center>
+                
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                      const likeButton1 = document.getElementById('like-button1');
+                      const likeCountElement1 = document.getElementById('like-count1');
+                      let likeCount1 = JSON.parse(localStorage.getItem('likeCount1')) || 0;
+                      likeCountElement1.innerText = likeCount1;
+                  
+                      likeButton1.addEventListener('click', () => {
+                        likeCount1++;
+                        likeCountElement1.innerText = likeCount1;
+                        localStorage.setItem('likeCount1', JSON.stringify(likeCount1));
+                      });
+                  
+                      const dislikeButton1 = document.getElementById('dislike-button1');
+                      const dislikeCountElement1 = document.getElementById('dislike-count1');
+                      let dislikeCount1 = JSON.parse(localStorage.getItem('dislikeCount1')) || 0;
+                      dislikeCountElement1.innerText = dislikeCount1;
+                  
+                      dislikeButton1.addEventListener('click', () => {
+                          dislikeCount1++;
+                          dislikeCountElement1.innerText = dislikeCount1;
+                          localStorage.setItem('dislikeCount1', JSON.stringify(dislikeCount1));
+                      });
+                    });
+
+                  </script>
+                  <center>
+                  <section id="comment-section" class="commentSec">
+                     <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Leave a Comment</p>
+                    <form id="comment-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required><br>
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                        <button type="button" id="submit-button">Submit</button>
+                    </form>
+                </section>
+            
+                <section id="comments">
+                    <p style="color:aliceblue; font-size: larger; text-decoration: underline;">Comments:</p>
+                    <ul id="comment-list" class="commentList"></ul>
+                </section>
+            </center>
+                <script>
+                    const nameInput = document.getElementById('name');
+                    const commentInput = document.getElementById('comment');
+                    const submitButton = document.getElementById('submit-button');
+                    const commentList = document.getElementById('comment-list');
+                    
+                    submitButton.addEventListener('click', () => {
+                        const name = nameInput.value;
+                        const comment = commentInput.value;
+                        
+                        if (name && comment) {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = `${name}: ${comment}`;
+                            commentList.appendChild(listItem);
+                            
+                            nameInput.value = '';
+                            commentInput.value = '';
+                        }
+                    });
+                </script>
+        </body>
+        <footer>
+            <table> 
+                <th>     
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto" alt="logo">  
+                </th>
+                <th>
+                    <center>
+                        <small><small>
+                         <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+                         <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+                         <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+                         <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+                        </small></small>
+                    </center>
+                </th>
+                <th>
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo">
+                </th>
+            </table>        
+        </footer>
+    </html>

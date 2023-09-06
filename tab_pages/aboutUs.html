@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> M.C. Recipes</title>
+            <link rel="stylesheet" type="text/css" href="../css/style.css">
+        </head>
+        <body>
+            <header>
+                <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo" onclick= "window.location.href='HomePageRecipeBook.html'"> 
+                <form> 
+                    <input type="button" onclick="window.location.href = 'HomePageRecipeBook.html'" id="tabs" value="HOME PAGE" >
+                    <input type="button" onclick="window.location.href = 'recipes.html'" id="tabs" value="RECIPES" >
+                    <input type="button" onclick="window.location.href = 'history.html'" id="tabs" value="HISTORY OF FOODS" >
+                    <input type="button" onclick="window.location.href = 'aboutUs.html'" id="tabsSelected" value="ABOUT US" >
+                    <input type="button" value="Search" class="mainSearchBtn" onclick="openRecipePage()">
+                    <input type="button" value= "In/Out" class="loginBtn" onclick="window.location.href = '../components/login.html'">
+                    <script>
+                      function openRecipePage() {
+                          window.location.href = 'recipes.html';
+                      }
+                    </script>
+                </form> 
+            </header> <br/> <br/> 
+            <table style="background-color: rgba(23, 24, 24, 0.568);">
+                <td >
+                    <th>
+                        <h3 style="color: rgb(163, 131, 42);"><b>ABOUT M.C. RECIPES </b> </h3>
+                        <p style="color:aliceblue;">M.C. Recipes web page was established in August 2023 by Murat Cenk Uyanik. 
+                            The purpose of this page is to provide some qualified information about the culinary and food industry, 
+                            as well as to create a recipe book for beginners that includes the preparation of certain dishes, their 
+                            ingredients and times.</p>
+                    </th>
+                    <th>
+                        <img src="../Pictures_RecipePage/logo.png" style="width:60vw; height:30vw;">
+                    </th>
+                </td>
+            </table> <br/><br/>
+        </body>
+        <footer>
+            <table> 
+                <th>
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="right"width="25%"height="auto" alt="logo"> 
+                </th>
+                <th>
+                    <center>
+                        <small><small>
+                         <p style=" color:aliceblue">Company: M.C. Recipes Co.</p>
+                         <p style=" color:aliceblue">Webpage Developer: Murat Cenk Uyanik</p>
+                         <p style=" color:aliceblue">Contact no: <a href="mailto:cenk.uyanik@metu.edu.tr">cenk.uyanik@metu.edu.tr</a></p>
+                         <p style=" color:aliceblue">© 2023 C.U. Studio , Inc. or its subsidiaries and affiliates. All rights reserved.</p> 
+                        </small></small>
+                    </center>
+                </th>
+                <th>
+                    <img src="../Pictures_RecipePage/logo.png" id="logo" align="left"width="25%"height="auto" alt="logo">
+                </th>
+            </table>        
+        </footer>
+    </html>
